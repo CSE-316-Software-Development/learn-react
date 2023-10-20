@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { sculptureList } from '../../data/data.js';
 
 export default function Gallery() {
+    // useState is the hook - var or att is idx and initial val is 0 - setIdx update state
   const [index, setIndex] = useState(0);
 
   function handleClick() {
