@@ -13,6 +13,10 @@ import Gallery from './qcomps/state.js'
 import List from "./qcomps/list_keys_id.js";
 import RecipeList from "./qcomps/recipes.js";
 import MenuBar from "./qcomps/menuBar.js";
+import Counter from "./components/queueUpdates.js";
+import React from "react";
+import Form from "@/pages/components/snapshot2";
+import RequestTracker from "@/pages/qcomps/shoppingCart";
 
 export default function Home() {
   return (
@@ -23,10 +27,13 @@ export default function Home() {
         {/*<Bios />*/}
         {/*<TodoList />*/}
         {/*<Profile />*/}
-        <Gallery />
+        {/*<Gallery />*/}
         {/*<List />*/}
         {/*<RecipeList />*/}
         {/*<MenuBar />*/}
+        {/*<Counter />*/}
+        {/*<Form />*/}
+        <RequestTracker />
     </div>
   )
 }
