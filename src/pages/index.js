@@ -17,6 +17,7 @@ import Counter from "./components/queueUpdates.js";
 import React from "react";
 import Form from "@/pages/components/snapshot2";
 import RequestTracker from "@/pages/qcomps/shoppingCart";
+import Scoreboard from "@/pages/qcomps/updObjectsForm";
 
 export default function Home() {
   return (
@@ -33,7 +34,8 @@ export default function Home() {
         {/*<MenuBar />*/}
         {/*<Counter />*/}
         {/*<Form />*/}
-        <RequestTracker />
+        {/*<RequestTracker />*/}
+        <Scoreboard />
     </div>
   )
 }
