@@ -1,12 +1,18 @@
 export default function Bio() {
   return (
-    <div class="intro">
-      <h1>Welcome to my website!</h1>
-    </div>
-    <p class="summary">
+      <div>
+        <div className="intro">
+          <h1>Welcome to my website!</h1>
+          <Code/>
+        </div>
+      </div>
+  );
+}
+
+  function Code() {
+    return (<p className="summary">
       You can find my thoughts here.
       <br/><br/>
       <b>And <i>pictures</i></b> of people!
-    </p>
-  );
-}
+    </p>)
+  }
