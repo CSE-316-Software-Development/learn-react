@@ -8,6 +8,7 @@ function Square({children}) {
 
 export default function Holder() {
   return (
+  <div>
     <Square>
      <img
        className="avatar"
@@ -17,5 +18,9 @@ export default function Holder() {
        height={300}
      />
     </Square>
+    <Square>
+      <p>Hello React</p>
+    </Square>
+  </div>
   )
 }

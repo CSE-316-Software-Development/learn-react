@@ -1,5 +1,5 @@
  function Item({ name, isPacked }) {
-   return <li className="item">{name}</li>;
+   return {isPacked} ? <li className="item"><del>{name}</del></li> : <li className="item">{name}</li>;
  }
 
 

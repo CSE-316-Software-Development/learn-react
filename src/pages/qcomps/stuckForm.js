@@ -1,35 +1,34 @@
 import { useState } from 'react';
 
 export default function Form() {
-  let firstName = '';
-  let lastName = '';
-
+  const [fName, setFName] = useState('');
+  const [lName, setLName] = useState('');
   function handleFirstNameChange(e) {
-    firstName = e.target.value;
+    setFName(e.target.value);
   }
 
   function handleLastNameChange(e) {
-    lastName = e.target.value;
+    setLName(e.target.value);
   }
 
   function handleReset() {
-    firstName = '';
-    lastName = '';
+    setFName('');
+    setLName('');
   }
 
   return (
     <form onSubmit={e => e.preventDefault()}>
       <input
         placeholder="First name"
-        value={firstName}
+        value={fName}
         onChange={handleFirstNameChange}
       />
       <input
         placeholder="Last name"
-        value={lastName}
+        value={lName}
         onChange={handleLastNameChange}
       />
-      <h1>Hi, {firstName} {lastName}</h1>
+      <h1>Hi, {fName} {lName}</h1>
       <button onClick={handleReset}>Reset</button>
     </form>
   );
