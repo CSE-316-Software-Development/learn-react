@@ -1,16 +1,35 @@
+function Profile({scientist, size=100}) {
+  return (
+    <section className="profile">
+      <h2>{scientist.name}</h2>
+      <img
+        className="avatar"
+        src={'https://i.imgur.com/' + person.imageId + 's.jpg'}
+        alt={person.name}
+        width={size}
+        height={size}
+      />
+      <ul>
+        <li>
+          <b>Profession: </b>
+          
+        </li>
+      </ul>
+    </section>
+  )
+}
+
+// scientist object to store profession, awards, etc. 
+
 export default function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
       <section className="profile">
         <h2>Maria Skłodowska-Curie</h2>
-        <img
-          className="avatar"
-          src='https://i.imgur.com/szV5sdGs.jpg'
-          alt="Maria Skłodowska-Curie"
-          width={70}
-          height={70}
-        />
+        <Avatar
+          person={{name: 'Maria Skłodowska-Curie', imageId: 'szV5sdG'}}
+          size={70} />
         <ul>
           <li>
             <b>Profession: </b>
