@@ -1,58 +1,39 @@
 import React from 'react';
 
-const scientistsData = [
-  {
-    name: 'Maria Skłodowska-Curie',
-    imageUrl: 'https://i.imgur.com/szV5sdGs.jpg',
-    profession: 'physicist and chemist',
-    awards: ['Nobel Prize in Physics', 'Nobel Prize in Chemistry', 'Davy Medal', 'Matteucci Medal'],
-    discovery: 'polonium (element)'
-  },
-  {
-    name: 'Katsuko Saruhashi',
-    imageUrl: 'https://i.imgur.com/YfeOqp2s.jpg',
-    profession: 'geochemist',
-    awards: ['Miyake Prize for geochemistry', 'Tanaka Prize'],
-    discovery: 'a method for measuring carbon dioxide in seawater'
-  }
-];
+export const people = [{
+  id: 0,
+  name: 'Creola Katherine Johnson',
+  profession: 'mathematician',
+  accomplishment: 'spaceflight calculations',
+  imageId: 'szV5sdG'
+}, {
+  id: 1,
+  name: 'Mario José Molina-Pasquel Henríquez',
+  profession: 'chemist',
+  accomplishment: 'discovery of Arctic ozone hole',
+  imageId: 'YfeOqp2'
+}];
 
-function ScientistProfile({ scientist }) {
-  return (
-      <section className="profile">
-        <h2>{scientist.name}</h2>
+function getImageUrl(imageId) {
+  return "https://i.imgur.com/" + imageId + "s.jpg"
+}
+
+export default function List() {
+  const listItems = people.map(person => (
+      <li key={person.id}>
         <img
-            className="avatar"
-            src={scientist.imageUrl}
-            alt={scientist.name}
+            src={getImageUrl(person.imageId)}
+            alt={person.name}
             width={70}
             height={70}
         />
-        <ul>
-          <li>
-            <b>Profession: </b>
-            {scientist.profession}
-          </li>
-          <li>
-            <b>Awards: </b>
-            {scientist.awards.join(', ')}
-          </li>
-          <li>
-            <b>Discovered: </b>
-            {scientist.discovery}
-          </li>
-        </ul>
-      </section>
-  );
-}
+        <div>
+          <h2>{person.name}</h2>
+          <p><b>Profession:</b> {person.profession}</p>
+          <p><b>Accomplishment:</b> {person.accomplishment}</p>
+        </div>
+      </li>
+  ));
 
-export default function Gallery() {
-  return (
-      <div>
-        <h1>Notable Scientists</h1>
-        {scientistsData.map((scientist, index) => (
-            <ScientistProfile key={index} scientist={scientist} />
-        ))}
-      </div>
-  );
+  return <ul>{listItems}</ul>;
 }
