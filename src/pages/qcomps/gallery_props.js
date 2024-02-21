@@ -1,39 +1,27 @@
 import React from 'react';
 
-export const people = [{
-  id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
-  imageId: 'szV5sdG'
-}, {
-  id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
-  imageId: 'YfeOqp2'
-}];
-
-function getImageUrl(imageId) {
-  return "https://i.imgur.com/" + imageId + "s.jpg"
+export default function MenuBar() {
+    return (
+        <div>
+            <AButton id="btn1" color="red" size="50px">
+                Button 1
+            </AButton>
+            <AButton id="btn2" color="green" size="30px">
+                Button 2
+            </AButton>
+        </div>
+    );
 }
 
-export default function List() {
-  const listItems = people.map(person => (
-      <li key={person.id}>
-        <img
-            src={getImageUrl(person.imageId)}
-            alt={person.name}
-            width={70}
-            height={70}
-        />
-        <div>
-          <h2>{person.name}</h2>
-          <p><b>Profession:</b> {person.profession}</p>
-          <p><b>Accomplishment:</b> {person.accomplishment}</p>
-        </div>
-      </li>
-  ));
+function AButton({ id, color, size, children }) {
+    const handleClick = () => {
+        document.getElementById(`${id}`).style.backgroundColor = color;
+        document.getElementById(`${id}`).style.fontSize = size;
+    };
 
-  return <ul>{listItems}</ul>;
+    return (
+        <button id={id} onClick={handleClick}>
+            {children}
+        </button>
+    );
 }
