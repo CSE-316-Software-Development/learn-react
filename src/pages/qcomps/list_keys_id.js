@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -13,12 +15,25 @@ export const people = [{
 }];
 
 function getImageUrl(imageId) {
-    return "https://i.imgur.com/" + imageId + "s.jpg"
+  return "https://i.imgur.com/" + imageId + "s.jpg"
 }
+
 export default function List() {
-  const listItems = people.map(person =>
-    <li>
-    </li>
-  );
+  const listItems = people.map(person => (
+      <li key={person.id}>
+        <img
+            src={getImageUrl(person.imageId)}
+            alt={person.name}
+            width={70}
+            height={70}
+        />
+        <div>
+          <h2>{person.name}</h2>
+          <p><b>Profession:</b> {person.profession}</p>
+          <p><b>Accomplishment:</b> {person.accomplishment}</p>
+        </div>
+      </li>
+  ));
+
   return <ul>{listItems}</ul>;
 }
