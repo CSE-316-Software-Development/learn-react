@@ -44,3 +44,5 @@ To learn more about React.js, take a look at the [React Documentation](https://l
 ## What to Submit?
 
 Submit all changes made to files in `src/pages/qcomps` in Canvas class activity for the day.
+
+02/20/24 work complete
