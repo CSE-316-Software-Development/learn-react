@@ -1,21 +1,25 @@
-const baseUrl = 'https://i.imgur.com/';
-const person = {
-  name: 'Gregorio Y. Zara',
-  imageId: '7vQD0fP',
-  imageSize: 's',
-  theme: {
-    backgroundColor: 'black',
-    color: 'pink'
-  }
-};
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 
 export default function TodoList() {
+
+  const baseUrl = 'https://i.imgur.com/';
+  const person = {
+    name: 'Gregorio Y. Zara',
+    imageId: '7vQD0fP',
+    imageSize: 's',
+    theme: {
+      backgroundColor: 'black',
+      color: 'pink'
+    }
+  };
+
   return (
     <div style={person.theme}>
-      <h1>Person Name's Todos</h1>
+      <h1>{person.name}'s Todos</h1>
       <img className="avatar"
-      src="baseURL + imageID + imageSize + .jpg"
-      alt="Person's Name"
+      src={baseUrl + person.imageId + person.imageSize + `.jpg`}
+      alt={person.name}
       />
     </div>
   );

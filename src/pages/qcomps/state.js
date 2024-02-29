@@ -2,37 +2,51 @@ import { useState } from 'react';
 import { sculptureList } from '../../data/data.js';
 
 export default function Gallery() {
-  const [index, setIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
+  const [ index, setIndex ] = useState( 0 );
+  const [ showMore, setShowMore ] = useState( false );
 
   function handleNextClick() {
-    setIndex(index + 1);
+    if ( index === sculptureList.length - 1 )
+      setIndex( 0 );
+    else
+      setIndex( index + 1 );
+  }
+
+  //i had fun here
+  function handleLastClick() {
+    if ( index === 0 )
+      setIndex( sculptureList.length - 1);
+    else 
+      setIndex( index - 1);
   }
 
   function handleMoreClick() {
-    setShowMore(!showMore);
+    setShowMore( !showMore );
   }
 
-  let sculpture = sculptureList[index];
+  let sculpture = sculptureList[ index ];
   return (
     <>
-      <button onClick={handleNextClick}>
+      <button onClick={ handleLastClick }>
+        Back
+      </button>
+      <button onClick={ handleNextClick }>
         Next
       </button>
       <h2>
-        <i>{sculpture.name} </i>
-        by {sculpture.artist}
+        <i>{ sculpture.name } </i>
+        by { sculpture.artist }
       </h2>
       <h3>
-        ({index + 1} of {sculptureList.length})
+        ({ index + 1 } of { sculptureList.length })
       </h3>
-      <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+      <button onClick={ handleMoreClick }>
+        { showMore ? 'Hide' : 'Show' } details
       </button>
-      {showMore && <p>{sculpture.description}</p>}
+      { showMore && <p>{ sculpture.description }</p> }
       <img
-        src={sculpture.url}
-        alt={sculpture.alt}
+        src={ sculpture.url }
+        alt={ sculpture.alt }
       />
     </>
   );

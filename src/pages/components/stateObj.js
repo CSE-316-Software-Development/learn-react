@@ -13,9 +13,9 @@ export default function PersonData() {
 
     return(
        <>
-            <textarea value={fName} onChange={e => setFName(e.target.value)} />
-            <textarea value={lName} onChange={e => setLName(e.target.value)} />
-            <textarea value={age} onChange={e => setAge(e.target.value)} />
+            <textarea value={fName} onChange={e => setFName(e.target.value)} placeholder='first name' />
+            <textarea value={lName} onChange={e => setLName(e.target.value)} placeholder='last name' />
+            <textarea value={age} onChange={e => setAge(e.target.value)}  placeholder='age'/>
             <button onClick={handleClick}> Save </button>
             {person.fullName && <p> Person: {person.fullName} is {person.age} years old </p>}
        </>

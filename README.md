@@ -1,6 +1,6 @@
 ## Personal Information:
 
-Full Name: Enter Your Full Name
+Full Name: Dennis Hernandez (I did  this already in main branch before cloning so i am putting this here so that there is something to push the nuew bracnh to the remote repository)
 
 ## Getting Started
 First, fork this repository and clone it to your local machine.
