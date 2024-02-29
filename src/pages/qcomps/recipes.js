@@ -1,22 +1,23 @@
-export const recipes = [{
-  id: 'greek-salad',
-  name: 'Greek Salad',
-  ingredients: new Set(['tomatoes', 'cucumber', 'onion', 'olives', 'feta'])
-}, {
-  id: 'hawaiian-pizza',
-  name: 'Hawaiian Pizza',
-  ingredients: new Set(['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple'])
-}, {
-  id: 'hummus',
-  name: 'Hummus',
-  ingredients: new Set(['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini'])
-}];
+import React from 'react';
+import { recipes } from './recipes'; // Import the recipes array
 
 export default function RecipeList() {
   return (
-    <div>
-      <h1>Recipes</h1>
-      {}
-    </div>
+      <div>
+        <h1>Recipes</h1>
+        <ul>
+          {recipes.map(recipe => (
+              <li key={recipe.id}>
+                <h2>{recipe.name}</h2>
+                <h3>Ingredients:</h3>
+                <ul>
+                  {Array.from(recipe.ingredients).map((ingredient, index) => (
+                      <li key={index}>{ingredient}</li>
+                  ))}
+                </ul>
+              </li>
+          ))}
+        </ul>
+      </div>
   );
 }

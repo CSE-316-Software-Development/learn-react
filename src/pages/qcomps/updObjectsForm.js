@@ -8,7 +8,10 @@ export default function Scoreboard() {
   });
 
   function handlePlusClick() {
-    player.likescore++;
+    setPlayer(prevPlayer => ({
+      ...prevPlayer,
+      likescore: prevPlayer.likescore + 1,
+    }));
   }
 
   function handleFirstNameChange(e) {
@@ -20,33 +23,32 @@ export default function Scoreboard() {
 
   function handleLastNameChange(e) {
     setPlayer({
-      lastName: e.target.value
+      ...player,
+      lastName: e.target.value,
     });
   }
 
   return (
-    <>
-      <label>
-        Like Score: <b>{player.likescore}</b>
-        {'  '}
-        <button onClick={handlePlusClick}>
-          +1
-        </button>
-      </label>
-      <label>
-        First name:
-        <input
-          value={player.firstName}
-          onChange={handleFirstNameChange}
-        />
-      </label>
-      <label>
-        Last name:
-        <input
-          value={player.lastName}
-          onChange={handleLastNameChange}
-        />
-      </label>
-    </>
+      <>
+        <label>
+          Like Score: <b>{player.likescore}</b>
+          {'  '}
+          <button onClick={handlePlusClick}>+1</button>
+        </label>
+        <label>
+          First name:
+          <input
+              value={player.firstName}
+              onChange={handleFirstNameChange}
+          />
+        </label>
+        <label>
+          Last name:
+          <input
+              value={player.lastName}
+              onChange={handleLastNameChange}
+          />
+        </label>
+      </>
   );
 }
