@@ -9,13 +9,13 @@ const person = {
   }
 };
 
-export default function TodoList() {
+export default function TodoList(props) {
   return (
     <div style={person.theme}>
       <h1>Person Name's Todos</h1>
       <img className="avatar"
-      src="baseURL + imageID + imageSize + .jpg"
-      alt="Person's Name"
+        src={baseUrl + person.imageID + person.imageSize + ".jpg"}
+        alt="Person's Name"
       />
     </div>
   );
