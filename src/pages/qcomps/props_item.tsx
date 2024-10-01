@@ -1,6 +1,9 @@
 import { ItemProps } from "@/types/item";
 
 function Item({ name, isPacked } : ItemProps) {
+  if (isPacked) {
+    return <li> <del> {name} </del></li>
+  }
   return (
     <li className="item">
       {name}
