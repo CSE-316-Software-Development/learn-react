@@ -1,6 +1,6 @@
 ## Personal Information:
 
-Full Name: Enter Your Full Name
+Full Name: Zachary Coates
 
 ## Getting Started
 First, fork this repository and clone it to your local machine.
@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the an image displayed.
+Open [http://localhost:3000](http:/run de/localhost:3000) with your browser to see the an image displayed.
 
 Next, create a new branch using the following command:
 
